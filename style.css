@@ -1,0 +1,95 @@
+:root{
+  --bg:#11161c; --card:#1a2129; --card2:#222b35; --line:#2d3743;
+  --text:#e8edf2; --muted:#8b98a7; --accent:#3ddc84; --accent-d:#1f8a50;
+  --warn:#ffb547; --danger:#ff6b6b; --blue:#5aa9ff;
+  --r:14px;
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;background:var(--bg);color:var(--text);
+  font-family:system-ui,-apple-system,"Segoe UI",Rubik,Arial,sans-serif;font-size:16px}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer}
+.top{position:sticky;top:0;z-index:5;display:flex;align-items:center;justify-content:space-between;
+  padding:calc(10px + env(safe-area-inset-top)) 16px 10px;background:var(--bg);border-bottom:1px solid var(--line)}
+.top h1{font-size:20px;margin:0}
+.icon-btn{background:none;border:0;font-size:22px;padding:6px 8px;color:var(--muted)}
+main{padding:12px 12px calc(90px + env(safe-area-inset-bottom));max-width:640px;margin:0 auto}
+.tabs{position:fixed;bottom:0;left:0;right:0;display:flex;background:#0c1015;border-top:1px solid var(--line);
+  padding-bottom:env(safe-area-inset-bottom);z-index:6}
+.tabs button{flex:1;background:none;border:0;padding:8px 0 10px;color:var(--muted);font-size:13px;display:flex;flex-direction:column;align-items:center;gap:2px}
+.tabs button span{font-size:20px}
+.tabs button.on{color:var(--accent)}
+
+.card{background:var(--card);border-radius:var(--r);padding:14px;margin-bottom:10px;border:1px solid var(--line)}
+.card.done{border-color:var(--accent-d)}
+.card.skipped{opacity:.45}
+.row{display:flex;align-items:center;gap:8px}
+.between{justify-content:space-between}
+.wrap{flex-wrap:wrap}
+.grow{flex:1;min-width:0}
+.muted{color:var(--muted)}
+.small{font-size:13px}
+.tag{display:inline-block;font-size:12px;padding:2px 8px;border-radius:99px;background:var(--card2);color:var(--muted);white-space:nowrap}
+.tag.up{background:#3a2d12;color:var(--warn)}
+.tag.max{background:#173826;color:var(--accent)}
+.tag.hold{background:#3a1c1c;color:var(--danger)}
+.ex-name{font-weight:700;font-size:17px}
+.weight{font-size:26px;font-weight:800;line-height:1}
+.weight small{font-size:13px;font-weight:500;color:var(--muted)}
+
+.chips{display:flex;gap:6px;overflow-x:auto;padding-bottom:6px;margin-bottom:6px}
+.chip{border:1px solid var(--line);background:var(--card);border-radius:99px;padding:7px 14px;white-space:nowrap}
+.chip.on{background:var(--accent);color:#06210f;border-color:var(--accent);font-weight:700}
+
+.progress{height:6px;background:var(--card2);border-radius:99px;overflow:hidden;margin:4px 0 12px}
+.progress i{display:block;height:100%;background:var(--accent);transition:width .25s}
+
+.sets{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.set{position:relative;min-width:58px;padding:8px 6px 6px;border-radius:12px;background:var(--card2);border:2px solid transparent;
+  display:flex;flex-direction:column;align-items:center;user-select:none}
+.set .n{font-size:22px;font-weight:800}
+.set .lbl{font-size:11px;color:var(--muted)}
+.set.ok{border-color:var(--accent);background:#14301f}
+.set.less{border-color:var(--danger);background:#331b1b}
+.adj{display:flex;gap:4px;margin-top:6px}
+.adj button{width:26px;height:24px;border-radius:7px;border:0;background:#0f141a;color:var(--text);font-weight:700;padding:0}
+
+.btn{border:0;border-radius:12px;padding:12px 16px;background:var(--card2);font-weight:600}
+.btn.primary{background:var(--accent);color:#06210f;font-weight:800}
+.btn.danger{background:#3a1c1c;color:var(--danger)}
+.btn.ghost{background:none;border:1px solid var(--line)}
+.btn.block{width:100%;display:block}
+.btn.sm{padding:7px 11px;font-size:14px;border-radius:9px}
+.finish{position:sticky;bottom:calc(72px + env(safe-area-inset-bottom));margin-top:14px;box-shadow:0 6px 24px #000a;font-size:18px;padding:15px}
+
+.list-item{display:flex;align-items:center;gap:10px;padding:12px;border-bottom:1px solid var(--line)}
+.list-item:last-child{border-bottom:0}
+.mini{background:none;border:0;color:var(--muted);font-size:18px;padding:4px 6px}
+
+.field{margin-bottom:12px}
+.field label{display:block;font-size:13px;color:var(--muted);margin-bottom:5px}
+.field input[type=text],.field input[type=number],.field select{width:100%;padding:11px 12px;border-radius:10px;border:1px solid var(--line);background:#0f141a}
+.field input:focus,.field select:focus{outline:2px solid var(--accent-d)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+.check{display:flex;align-items:center;gap:8px;padding:6px 0}
+.check input{width:20px;height:20px;accent-color:var(--accent)}
+.reps-edit{display:flex;gap:6px;flex-wrap:wrap}
+.reps-edit input{width:56px!important;text-align:center;padding:9px 4px;border-radius:9px;border:1px solid var(--line);background:#0f141a}
+
+.modal{position:fixed;inset:0;background:#000a;z-index:20;display:flex;align-items:flex-end;justify-content:center}
+.sheet{background:var(--card);width:100%;max-width:640px;max-height:92vh;overflow:auto;border-radius:18px 18px 0 0;
+  padding:18px 16px calc(18px + env(safe-area-inset-bottom))}
+.sheet h2{margin:0 0 14px;font-size:19px}
+.hidden{display:none!important}
+.toast{position:fixed;bottom:calc(86px + env(safe-area-inset-bottom));left:50%;transform:translateX(-50%);background:#e8edf2;color:#11161c;
+  padding:10px 16px;border-radius:10px;z-index:30;font-weight:600;max-width:90%;text-align:center}
+.timer{position:fixed;bottom:calc(142px + env(safe-area-inset-bottom));left:12px;z-index:8;background:var(--blue);color:#04203f;font-weight:800;
+  border-radius:99px;padding:8px 14px;box-shadow:0 4px 16px #0008;display:flex;gap:10px;align-items:center}
+.timer button{border:0;background:#04203f33;border-radius:99px;padding:2px 9px;font-weight:800;color:#04203f}
+.empty{text-align:center;padding:40px 16px;color:var(--muted)}
+.empty .big{font-size:44px}
+.change{font-size:14px;padding:6px 0;border-bottom:1px dashed var(--line)}
+.change:last-child{border-bottom:0}
+.arrow{color:var(--accent);font-weight:700}
+h3{font-size:15px;color:var(--muted);margin:18px 4px 8px;font-weight:600}
